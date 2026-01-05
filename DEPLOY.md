@@ -67,7 +67,7 @@ npm run deploy
 
 이 명령어는 다음을 수행합니다:
 1. `npm run build` - 정적 사이트 빌드
-2. `gh-pages -d build` - `build` 디렉토리를 `gh-pages` 브랜치에 배포
+2. `gh-pages -d out` - `out` 디렉토리를 `gh-pages` 브랜치에 배포
 
 ### 배포 확인
 
@@ -76,9 +76,41 @@ npm run deploy
 
 몇 분 후에 변경사항이 반영됩니다.
 
+### 트러블슈팅
+
+#### CSS/JS 파일이 로드되지 않는 경우 (404 에러)
+
+배포 후 CSS나 JS 파일이 404 에러로 로드되지 않는 경우, 다음을 확인하세요:
+
+1. **GitHub Pages 캐시 대기**
+   - GitHub Pages는 배포 후 최대 10분까지 캐시를 업데이트할 수 있습니다
+   - 잠시 기다린 후 강력 새로고침(Cmd+Shift+R 또는 Ctrl+Shift+R)을 시도하세요
+
+2. **브라우저 캐시 삭제**
+   - 개발자 도구(F12)를 열고 Network 탭에서 "Disable cache" 체크
+   - 또는 브라우저의 강력 새로고침(Cmd+Shift+R 또는 Ctrl+Shift+R) 실행
+
+3. **배포 상태 확인**
+   - GitHub 저장소 → Settings → Pages에서 배포 상태 확인
+   - 배포가 완료되었는지 확인
+
+4. **파일 존재 확인**
+   ```bash
+   # 배포된 파일 확인
+   git ls-tree -r --name-only origin/gh-pages | grep "_next/static/css"
+   ```
+
+5. **빌드 및 재배포**
+   ```bash
+   # 깨끗한 빌드
+   rm -rf out .next
+   npm run build
+   npm run deploy
+   ```
+
 ### 주의사항
 
 - GitHub Pages는 서브디렉토리(`/MinwonTalk/`)에서 호스팅되므로 `next.config.js`에 `basePath`가 설정되어 있습니다.
 - 로컬 개발 환경(`npm run dev`)에서는 `basePath`가 적용되지 않아 정상 작동합니다.
-- 프로덕션 빌드(`npm run build`) 시에만 `basePath`가 적용됩니다.
-
+- `distDir` 옵션을 사용하지 않습니다. Next.js의 기본 출력 디렉토리인 `out`을 사용합니다.
+- **중요**: GitHub Pages는 기본적으로 Jekyll을 사용하며, 밑줄(`_`)로 시작하는 디렉터리를 무시합니다. Next.js의 `_next` 폴더가 무시되지 않도록 배포 시 `.nojekyll` 파일이 자동으로 생성됩니다.
