@@ -5,7 +5,6 @@ const basePath = isProd ? '/MinwonTalk' : '';
 const nextConfig = {
   reactStrictMode: true,
   output: 'export',
-  distDir: 'build',
   basePath: basePath,
   assetPrefix: basePath,
   images: {
