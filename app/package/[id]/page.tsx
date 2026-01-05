@@ -1,5 +1,3 @@
-'use client';
-
 import {
   Card,
   CardContent,
@@ -16,6 +14,12 @@ import { ArrowLeft } from 'lucide-react';
 type PackagePageProps = {
   params: { id: string };
 };
+
+export function generateStaticParams() {
+  return mockMinwonPackages.map((pkg) => ({
+    id: pkg.id,
+  }));
+}
 
 export default function PackagePage({ params }: PackagePageProps) {
   const { id } = params;

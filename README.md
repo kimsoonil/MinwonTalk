@@ -106,7 +106,27 @@ npm run build
 
 # 프로덕션 서버 실행
 npm start
+
+# GitHub Pages 배포
+npm run deploy
 ```
+
+### 배포
+
+GitHub Pages에 배포하기 위해서는 GitHub 인증이 필요합니다. 자세한 내용은 [DEPLOY.md](./DEPLOY.md)를 참조하세요.
+
+**간단한 배포 방법:**
+
+1. **Personal Access Token 사용 (권장)**:
+   - GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)
+   - `repo` 권한으로 토큰 생성
+   - `npm run deploy` 실행 시 Password에 토큰 입력
+
+2. **GitHub CLI 사용**:
+   ```bash
+   gh auth login
+   npm run deploy
+   ```
 
 ### 프로젝트 구조
 
