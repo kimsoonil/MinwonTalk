@@ -76,3 +76,9 @@ npm run deploy
 
 몇 분 후에 변경사항이 반영됩니다.
 
+### 주의사항
+
+- GitHub Pages는 서브디렉토리(`/MinwonTalk/`)에서 호스팅되므로 `next.config.js`에 `basePath`가 설정되어 있습니다.
+- 로컬 개발 환경(`npm run dev`)에서는 `basePath`가 적용되지 않아 정상 작동합니다.
+- 프로덕션 빌드(`npm run build`) 시에만 `basePath`가 적용됩니다.
+
