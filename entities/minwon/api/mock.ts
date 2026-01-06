@@ -1,4 +1,4 @@
-import { Minwon, MinwonPackage } from '../model/types';
+import { Minwon, MinwonPackage } from '@/entities/minwon/model/types';
 
 /**
  * TOP 10 민원 Mock 데이터

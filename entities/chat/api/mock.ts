@@ -1,4 +1,4 @@
-import type { ChatMessage } from '../model/types';
+import type { ChatMessage } from '@/entities/chat/model/types';
 import { searchMinwons, getMinwonById } from '@/entities/minwon/api';
 
 /**
