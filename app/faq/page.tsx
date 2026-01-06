@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { Header } from '@/components/layout/header';
-import { Footer } from '@/components/layout/footer';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { Header } from '@/widgets/header/ui/header';
+import { Footer } from '@/widgets/footer/ui/footer';
+import { Card, CardContent, CardHeader, CardTitle } from '@/shared/ui/card';
+import { Button } from '@/shared/ui/button';
 import { ChevronDown, HelpCircle, MessageCircle, Shield, FileText } from 'lucide-react';
 import Link from 'next/link';
 

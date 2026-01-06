@@ -1,8 +1,8 @@
 'use client';
 
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Header } from '@/components/layout/header';
+import { Card, CardContent } from '@/shared/ui/card';
+import { Button } from '@/shared/ui/button';
+import { Header } from '@/widgets/header/ui/header';
 import Link from 'next/link';
 import {
   CheckCircle,
@@ -13,7 +13,7 @@ import {
   FileText,
   Lightbulb,
 } from 'lucide-react';
-import { formatDate } from '@/lib/utils';
+import { formatDate } from '@/shared/lib/utils';
 
 export default function IssuanceCompletePage() {
   const issuedDate = new Date();

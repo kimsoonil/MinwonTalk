@@ -1,14 +1,14 @@
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/shared/ui/button';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import { Header } from '@/components/layout/header';
-import { Footer } from '@/components/layout/footer';
+} from '@/shared/ui/card';
+import { Header } from '@/widgets/header/ui/header';
+import { Footer } from '@/widgets/footer/ui/footer';
 import {
   MessageCircle,
   Fingerprint,

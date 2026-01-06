@@ -1,15 +1,15 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { Header } from '@/components/layout/header';
-import { Footer } from '@/components/layout/footer';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/shared/ui/card';
+import { Input } from '@/shared/ui/input';
+import { Button } from '@/shared/ui/button';
+import { Header } from '@/widgets/header/ui/header';
+import { Footer } from '@/widgets/footer/ui/footer';
 import Link from 'next/link';
-import { mockMinwons } from '@/mock/minwons';
-import type { Minwon } from '@/types/minwon';
-import { formatCurrency } from '@/lib/utils';
+import { mockMinwons } from '@/entities/minwon/api';
+import type { Minwon } from '@/entities/minwon/model/types';
+import { formatCurrency } from '@/shared/lib/utils';
 import { Search, ArrowLeft } from 'lucide-react';
 
 export default function MinwonListPage() {

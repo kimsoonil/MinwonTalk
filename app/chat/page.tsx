@@ -1,14 +1,14 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { ChatMessage } from '@/components/chat/chat-message';
-import { ChatInput } from '@/components/chat/chat-input';
-import { ChatSidebar } from '@/components/chat/chat-sidebar';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Header } from '@/components/layout/header';
-import { generateChatResponse, createChatMessage } from '@/mock/chat';
-import type { ChatMessage as ChatMessageType } from '@/types/minwon';
+import { ChatMessage } from '@/features/chat/ui/chat-message';
+import { ChatInput } from '@/features/chat/ui/chat-input';
+import { ChatSidebar } from '@/widgets/chat-sidebar/ui/chat-sidebar';
+import { Button } from '@/shared/ui/button';
+import { Card, CardContent } from '@/shared/ui/card';
+import { Header } from '@/widgets/header/ui/header';
+import { generateChatResponse, createChatMessage } from '@/entities/chat/api';
+import type { ChatMessage as ChatMessageType } from '@/entities/chat/model/types';
 import { MessageCircle, FileText, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 

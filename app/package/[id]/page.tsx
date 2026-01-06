@@ -4,11 +4,11 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+} from '@/shared/ui/card';
+import { Button } from '@/shared/ui/button';
 import Link from 'next/link';
-import { mockMinwonPackages, getMinwonsByPackageId } from '@/mock/minwons';
-import { formatCurrency } from '@/lib/utils';
+import { mockMinwonPackages, getMinwonsByPackageId } from '@/entities/minwon/api';
+import { formatCurrency } from '@/shared/lib/utils';
 import { ArrowLeft } from 'lucide-react';
 
 type PackagePageProps = {

@@ -6,9 +6,9 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Header } from '@/components/layout/header';
+} from '@/shared/ui/card';
+import { Button } from '@/shared/ui/button';
+import { Header } from '@/widgets/header/ui/header';
 import Link from 'next/link';
 import { ArrowLeft, CheckCircle, Shield, Lock } from 'lucide-react';
 
