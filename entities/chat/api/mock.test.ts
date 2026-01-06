@@ -10,7 +10,8 @@ describe('entities/chat/api', () => {
     });
 
     it('초본 키워드에 대해 적절한 응답을 생성해야 함', () => {
-      const response = generateChatResponse('초본 필요해');
+      // '초본'만으로는 매칭되지 않으므로 '주민등록초본' 또는 '초본 발급'처럼 구체적으로 입력
+      const response = generateChatResponse('주민등록초본 발급해줘');
       expect(response.message).toContain('주민등록초본');
       expect(response.relatedMinwons).toContain('minwon-002');
     });

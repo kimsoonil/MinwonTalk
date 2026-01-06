@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ChatInput } from './chat-input';
 
@@ -23,7 +23,9 @@ describe('ChatInput', () => {
     await user.type(input, '등본 발급해줘');
     await user.click(submitButton);
 
-    expect(onSend).toHaveBeenCalledWith('등본 발급해줘');
+    await waitFor(() => {
+      expect(onSend).toHaveBeenCalledWith('등본 발급해줘');
+    });
     expect(input).toHaveValue('');
   });
 
@@ -35,7 +37,9 @@ describe('ChatInput', () => {
     const input = screen.getByPlaceholderText(/무엇을 도와드릴까요/);
     await user.type(input, '테스트 메시지{Enter}');
 
-    expect(onSend).toHaveBeenCalledWith('테스트 메시지');
+    await waitFor(() => {
+      expect(onSend).toHaveBeenCalledWith('테스트 메시지');
+    });
   });
 
   it('빈 메시지는 전송되지 않아야 함', async () => {

@@ -30,7 +30,8 @@ describe('ChatMessage', () => {
     render(<ChatMessage message={message} />);
 
     expect(screen.getByText('안녕하세요')).toBeInTheDocument();
-    expect(screen.getByText('민원똑똑 AI')).toBeInTheDocument();
+    // 텍스트가 "민원똑똑 AI · 시간" 형식으로 나뉘어져 있으므로 정규식 사용
+    expect(screen.getByText(/민원똑똑 AI/)).toBeInTheDocument();
   });
 
   it('관련 민원이 있으면 표시해야 함', () => {
