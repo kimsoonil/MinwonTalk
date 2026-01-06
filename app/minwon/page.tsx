@@ -102,7 +102,8 @@ export default function MinwonListPage() {
             filteredMinwons.map((minwon) => (
               <Card
                 key={minwon.id}
-                className="hover:shadow-lg transition-shadow flex flex-col"
+                className="hover:shadow-lg transition-shadow flex flex-col cursor-pointer"
+                onClick={() => window.open('https://plus.gov.kr/', '_blank')}
               >
                 <CardHeader className="flex-shrink-0">
                   <CardTitle className="text-lg line-clamp-1">
@@ -143,7 +144,11 @@ export default function MinwonListPage() {
                           : '온라인 발급 불가'}
                       </span>
                     </div>
-                    <Link href={`/chat?minwon=${minwon.id}`} className="w-full">
+                    <Link 
+                      href={`/chat?minwon=${minwon.id}`} 
+                      className="w-full"
+                      onClick={(e) => e.stopPropagation()}
+                    >
                       <Button variant="outline" className="w-full mt-2" size="sm">
                         신청하기
                       </Button>

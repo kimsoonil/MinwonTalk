@@ -84,7 +84,11 @@ export default function PackagePage({ params }: PackagePageProps) {
             <h2 className="text-2xl font-bold mb-4">포함 서류</h2>
             <div className="grid md:grid-cols-2 gap-4">
               {minwons.map((minwon) => (
-                <Card key={minwon.id}>
+                <Card 
+                  key={minwon.id}
+                  className="cursor-pointer hover:shadow-lg transition-shadow"
+                  onClick={() => window.open('https://plus.gov.kr/', '_blank')}
+                >
                   <CardHeader>
                     <CardTitle>{minwon.name}</CardTitle>
                     <CardDescription>{minwon.institution}</CardDescription>
