@@ -8,7 +8,7 @@ import {
 import { Button } from '@/shared/ui/button';
 import Link from 'next/link';
 import { mockMinwonPackages, getMinwonsByPackageId } from '@/entities/minwon/api';
-import { formatCurrency } from '@/shared/lib/utils';
+import { MinwonCard } from '@/features/minwon-search/ui/minwon-card';
 import { ArrowLeft } from 'lucide-react';
 
 type PackagePageProps = {
@@ -84,37 +84,7 @@ export default function PackagePage({ params }: PackagePageProps) {
             <h2 className="text-2xl font-bold mb-4">포함 서류</h2>
             <div className="grid md:grid-cols-2 gap-4">
               {minwons.map((minwon) => (
-                <Card 
-                  key={minwon.id}
-                  className="cursor-pointer hover:shadow-lg transition-shadow"
-                  onClick={() => window.open('https://plus.gov.kr/', '_blank')}
-                >
-                  <CardHeader>
-                    <CardTitle>{minwon.name}</CardTitle>
-                    <CardDescription>{minwon.institution}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      {minwon.description}
-                    </p>
-                    <div className="flex justify-between items-center text-sm">
-                      <span className="text-muted-foreground">
-                        수수료: {formatCurrency(minwon.fee)}
-                      </span>
-                      <span
-                        className={
-                          minwon.onlineAvailable
-                            ? 'text-green-600'
-                            : 'text-red-600'
-                        }
-                      >
-                        {minwon.onlineAvailable
-                          ? '온라인 발급 가능'
-                          : '온라인 발급 불가'}
-                      </span>
-                    </div>
-                  </CardContent>
-                </Card>
+                <MinwonCard key={minwon.id} minwon={minwon} />
               ))}
             </div>
           </div>
