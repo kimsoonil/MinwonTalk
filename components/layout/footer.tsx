@@ -34,7 +34,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/pricing"
+                  href="/"
                   className="text-muted-foreground hover:text-foreground"
                 >
                   요금제
@@ -57,7 +57,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/about"
+                  href="/"
                   className="text-muted-foreground hover:text-foreground"
                 >
                   팀 소개
@@ -65,7 +65,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/terms"
+                  href="/"
                   className="text-muted-foreground hover:text-foreground"
                 >
                   이용약관
@@ -73,7 +73,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/privacy"
+                  href="/"
                   className="text-muted-foreground hover:text-foreground"
                 >
                   개인정보처리방침
@@ -88,7 +88,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/contact"
+                  href="/"
                   className="text-muted-foreground hover:text-foreground"
                 >
                   1:1 문의
@@ -96,7 +96,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/notice"
+                  href="/"
                   className="text-muted-foreground hover:text-foreground"
                 >
                   공지사항

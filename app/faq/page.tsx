@@ -230,7 +230,7 @@ export default function FaqPage() {
                 챗봇으로 상담받기
               </Button>
             </Link>
-            <Link href="/contact">
+            <Link href="/">
               <Button variant="outline" className="w-full sm:w-auto">
                 1:1 문의하기
               </Button>

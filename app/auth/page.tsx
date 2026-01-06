@@ -178,11 +178,11 @@ export default function AuthPage() {
         <div className="mt-8 text-center text-sm text-muted-foreground">
           <p>
             로그인 시{' '}
-            <Link href="/terms" className="underline hover:text-foreground">
+            <Link href="/" className="underline hover:text-foreground">
               이용약관
             </Link>
             {' 및 '}
-            <Link href="/privacy" className="underline hover:text-foreground">
+            <Link href="/" className="underline hover:text-foreground">
               개인정보처리방침
             </Link>
             에 동의하는 것으로 간주됩니다.
