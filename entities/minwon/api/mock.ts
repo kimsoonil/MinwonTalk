@@ -14,6 +14,7 @@ export const mockMinwons: Minwon[] = [
     processingTime: '즉시 발급',
     fee: 500,
     onlineAvailable: true,
+    url: 'https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000015&tp_seq=01',
   },
   {
     id: 'minwon-002',
@@ -26,6 +27,7 @@ export const mockMinwons: Minwon[] = [
     processingTime: '즉시 발급',
     fee: 500,
     onlineAvailable: true,
+    url: 'https://www.gov.kr',
   },
   {
     id: 'minwon-003',
@@ -37,6 +39,7 @@ export const mockMinwons: Minwon[] = [
     processingTime: '즉시 발급',
     fee: 500,
     onlineAvailable: true,
+    url: 'https://plus.gov.kr/search/searchdtl?srvcId=97400000004&typeSn=11',
   },
   {
     id: 'minwon-004',
@@ -49,6 +52,7 @@ export const mockMinwons: Minwon[] = [
     processingTime: '즉시 발급',
     fee: 500,
     onlineAvailable: true,
+    url: 'https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000025&tp_seq=01',
   },
   {
     id: 'minwon-005',
@@ -61,6 +65,7 @@ export const mockMinwons: Minwon[] = [
     processingTime: '즉시 발급',
     fee: 500,
     onlineAvailable: true,
+    url: 'https://www.gov.kr',
   },
   {
     id: 'minwon-006',
@@ -72,6 +77,7 @@ export const mockMinwons: Minwon[] = [
     processingTime: '즉시 발급',
     fee: 0,
     onlineAvailable: true,
+    url: 'https://www.gov.kr',
   },
   {
     id: 'minwon-007',
@@ -83,6 +89,7 @@ export const mockMinwons: Minwon[] = [
     processingTime: '즉시 발급',
     fee: 0,
     onlineAvailable: true,
+    url: 'https://www.gov.kr',
   },
   {
     id: 'minwon-008',
@@ -94,6 +101,7 @@ export const mockMinwons: Minwon[] = [
     processingTime: '즉시 발급',
     fee: 600,
     onlineAvailable: true,
+    url: 'https://www.gov.kr',
   },
   {
     id: 'minwon-009',
@@ -105,6 +113,7 @@ export const mockMinwons: Minwon[] = [
     processingTime: '즉시 발급',
     fee: 500,
     onlineAvailable: true,
+    url: 'https://plus.gov.kr/search/searchdtl?srvcId=97400000004&typeSn=13',
   },
   {
     id: 'minwon-010',
@@ -116,6 +125,7 @@ export const mockMinwons: Minwon[] = [
     processingTime: '즉시 발급',
     fee: 500,
     onlineAvailable: true,
+    url: 'https://www.gov.kr',
   },
   {
     id: 'minwon-011',

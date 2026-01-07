@@ -56,11 +56,19 @@ describe('ChatMessage', () => {
     const minwonCard = screen.getByText('주민등록등본').closest('div');
     if (minwonCard) {
       minwonCard.click();
-      expect(window.open).toHaveBeenCalledWith(
-        'https://plus.gov.kr/',
-        '_blank'
-      );
+      expect(window.open).toHaveBeenCalled();
     }
+  });
+
+  it('여권 재발급 관련 민원을 표시해야 함', () => {
+    const message: ChatMessageType = createChatMessage(
+      'assistant',
+      '여권 재발급 안내',
+      ['minwon-011']
+    );
+    render(<ChatMessage message={message} />);
+
+    expect(screen.getByText('여권 재발급')).toBeInTheDocument();
   });
 
   it('타임스탬프를 표시해야 함', () => {

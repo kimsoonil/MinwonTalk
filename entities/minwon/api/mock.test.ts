@@ -79,6 +79,21 @@ describe('entities/minwon/api', () => {
       const results = searchMinwons('존재하지않는민원');
       expect(results).toEqual([]);
     });
+
+    it('여권 재발급을 검색할 수 있어야 함', () => {
+      const results = searchMinwons('여권');
+      expect(results.length).toBeGreaterThan(0);
+      const passportResult = results.find((r) => r.id === 'minwon-011');
+      expect(passportResult).toBeDefined();
+      expect(passportResult?.name).toBe('여권 재발급');
+    });
+
+    it('여권 재발급이 URL을 가지고 있어야 함', () => {
+      const minwon = getMinwonById('minwon-011');
+      expect(minwon).toBeDefined();
+      expect(minwon?.url).toBeDefined();
+      expect(minwon?.url).toContain('gov.kr');
+    });
   });
 
   describe('getMinwonById', () => {

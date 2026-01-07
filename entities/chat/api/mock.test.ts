@@ -52,6 +52,18 @@ describe('entities/chat/api', () => {
       expect(response.relatedMinwons.length).toBeGreaterThan(0);
     });
 
+    it('여권 키워드에 대해 적절한 응답을 생성해야 함', () => {
+      const response = generateChatResponse('여권 재발급');
+      expect(response.message).toContain('여권');
+      expect(response.relatedMinwons).toContain('minwon-011');
+    });
+
+    it('여권 발급 키워드도 인식해야 함', () => {
+      const response = generateChatResponse('여권 발급해줘');
+      expect(response.message).toContain('여권');
+      expect(response.relatedMinwons.length).toBeGreaterThan(0);
+    });
+
     it('알 수 없는 키워드에 대해 기본 응답을 반환해야 함', () => {
       const response = generateChatResponse('알 수 없는 질문');
       expect(response.message).toBeTruthy();
