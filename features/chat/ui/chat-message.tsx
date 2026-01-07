@@ -55,7 +55,12 @@ export function ChatMessage({ message }: ChatMessageProps) {
                         ? 'bg-background/10 border-background/20'
                         : 'bg-muted border-border'
                     } hover:opacity-90 transition-opacity cursor-pointer`}
-                    onClick={() => window.open('https://plus.gov.kr/', '_blank')}
+                    onClick={() =>
+                      window.open(
+                        minwon.url || 'https://www.gov.kr',
+                        '_blank'
+                      )
+                    }
                   >
                     <CardContent className="p-4">
                       <div className="flex items-start justify-between gap-3">

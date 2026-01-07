@@ -103,7 +103,9 @@ export default function MinwonListPage() {
               <Card
                 key={minwon.id}
                 className="hover:shadow-lg transition-shadow flex flex-col cursor-pointer"
-                onClick={() => window.open('https://plus.gov.kr/', '_blank')}
+                onClick={() =>
+                  window.open(minwon.url || 'https://www.gov.kr', '_blank')
+                }
               >
                 <CardHeader className="flex-shrink-0">
                   <CardTitle className="text-lg line-clamp-1">

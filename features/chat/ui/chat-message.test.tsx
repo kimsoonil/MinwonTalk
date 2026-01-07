@@ -56,7 +56,10 @@ describe('ChatMessage', () => {
     const minwonCard = screen.getByText('주민등록등본').closest('div');
     if (minwonCard) {
       minwonCard.click();
-      expect(window.open).toHaveBeenCalled();
+      expect(window.open).toHaveBeenCalledWith(
+        'https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000015&tp_seq=01',
+        '_blank'
+      );
     }
   });
 

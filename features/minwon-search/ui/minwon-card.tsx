@@ -12,7 +12,9 @@ export function MinwonCard({ minwon }: MinwonCardProps) {
   return (
     <Card
       className="cursor-pointer hover:shadow-lg transition-shadow"
-      onClick={() => window.open('https://plus.gov.kr/', '_blank')}
+      onClick={() =>
+        window.open(minwon.url || 'https://www.gov.kr', '_blank')
+      }
     >
       <CardHeader>
         <CardTitle>{minwon.name}</CardTitle>
