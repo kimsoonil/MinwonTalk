@@ -81,6 +81,14 @@ export function generateChatResponse(userMessage: string): {
     };
   }
 
+  if (lowerMessage.includes('여권')) {
+    return {
+      message:
+        '여권 재발급이 필요하시는군요! 정부24에서 온라인으로 신청할 수 있습니다. 처리 기간은 약 7~10일 소요됩니다.',
+      relatedMinwons: ['minwon-011'],
+    };
+  }
+
   // 검색 시도
   const searchResults = searchMinwons(userMessage);
   if (searchResults.length > 0) {

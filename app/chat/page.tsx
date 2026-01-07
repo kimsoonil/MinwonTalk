@@ -63,15 +63,24 @@ export default function ChatPage() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="h-screen flex flex-col overflow-hidden">
+      {/* 고정 헤더 */}
       <Header showLogin={false} />
 
-      <div className="flex flex-1 overflow-hidden">
-        <ChatSidebar onNewChat={handleNewChat} />
+      {/* 하단 영역: 사이드바 + 채팅 영역 */}
+      <div className="flex-1 flex overflow-hidden">
+        {/* 고정 사이드바 */}
+        <ChatSidebar
+          onNewChat={handleNewChat}
+          onMinwonClick={(minwonId, minwonName) => {
+            handleSend(minwonName + ' 발급해줘');
+          }}
+        />
 
+        {/* 채팅 영역: 가운데 영역만 스크롤 */}
         <div className="flex-1 flex flex-col overflow-hidden">
-          {/* Chat Header */}
-          <div className="border-b bg-background px-4 md:px-6 py-4">
+          {/* Chat Header: 고정 */}
+          <div className="border-b bg-background px-4 md:px-6 py-4 flex-shrink-0">
             <div className="flex items-center justify-between">
               <div>
                 <h1 className="text-xl font-bold">AI 상담 내역</h1>
@@ -102,7 +111,7 @@ export default function ChatPage() {
             </div>
           </div>
 
-          {/* Chat Messages Area */}
+          {/* Chat Messages Area: 스크롤 가능 */}
           <div className="flex-1 overflow-y-auto p-4 md:p-6 bg-muted/30">
             {messages.length === 1 && (
               <div className="max-w-3xl mx-auto mb-8">
@@ -163,8 +172,8 @@ export default function ChatPage() {
             </div>
           </div>
 
-          {/* Chat Input */}
-          <div className="border-t bg-background">
+          {/* Chat Input: 고정 */}
+          <div className="border-t bg-background flex-shrink-0">
             <ChatInput onSend={handleSend} disabled={isLoading} />
             <div className="px-4 pb-4">
               <p className="text-xs text-center text-muted-foreground">

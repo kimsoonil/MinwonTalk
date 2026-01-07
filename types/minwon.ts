@@ -13,6 +13,7 @@ export type Minwon = {
   processingTime: string; // 처리 시간
   fee: number; // 수수료
   onlineAvailable: boolean; // 온라인 발급 가능 여부
+  url?: string; // 정부24 서비스 URL
 };
 
 export type MinwonCategory =

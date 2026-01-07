@@ -13,11 +13,12 @@ import {
 type ChatSidebarProps = {
   onNewChat: () => void;
   currentChatId?: string;
+  onMinwonClick?: (minwonId: string, minwonName: string) => void;
 };
 
 const frequentMinwons = [
   { id: 'minwon-001', name: '주민등록등본', icon: FileText },
-  { id: 'minwon-002', name: '여권 재발급', icon: Plane },
+  { id: 'minwon-011', name: '여권 재발급', icon: Plane },
 ];
 
 const recentChats = [
@@ -26,9 +27,9 @@ const recentChats = [
   { id: '3', title: '자동차세 납부 방법', active: false },
 ];
 
-export function ChatSidebar({ onNewChat, currentChatId }: ChatSidebarProps) {
+export function ChatSidebar({ onNewChat, currentChatId, onMinwonClick }: ChatSidebarProps) {
   return (
-    <div className="hidden lg:flex flex-col w-64 border-r bg-background h-screen sticky top-0">
+    <div className="hidden lg:flex flex-col w-64 border-r bg-background h-full">
       <div className="p-4 border-b">
         <div className="flex items-center gap-2 mb-4">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
@@ -58,6 +59,7 @@ export function ChatSidebar({ onNewChat, currentChatId }: ChatSidebarProps) {
                 <Card
                   key={minwon.id}
                   className="cursor-pointer hover:border-primary/50 transition-colors"
+                  onClick={() => onMinwonClick?.(minwon.id, minwon.name)}
                 >
                   <CardContent className="p-3">
                     <div className="flex items-center gap-3">

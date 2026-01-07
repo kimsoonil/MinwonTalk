@@ -117,6 +117,18 @@ export const mockMinwons: Minwon[] = [
     fee: 500,
     onlineAvailable: true,
   },
+  {
+    id: 'minwon-011',
+    name: '여권 재발급',
+    category: '여권',
+    institution: '외교부 / 정부24',
+    description: '여권 유효기간 만료, 분실, 훼손 등으로 인한 여권 재발급 신청입니다.',
+    keywords: ['여권 재발급', '여권', '여권 발급', '여권 신청'],
+    processingTime: '7~10일',
+    fee: 55000,
+    onlineAvailable: true,
+    url: 'https://www.gov.kr/portal/service/serviceInfo/126200000030',
+  },
 ];
 
 /**
