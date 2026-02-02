@@ -10,7 +10,7 @@ export const mockMinwons: Minwon[] = [
     category: '주민등록',
     institution: '주민센터 / 정부24',
     description: '주민등록표에 기록된 등록사항 전부를 증명하는 서류입니다.',
-    keywords: ['등본', '주민등록등본', '등본 발급', '주소 증명'],
+    keywords: ['등본', '주민등록등본', '등본 발급', '주소 증명', '이직'],
     processingTime: '즉시 발급',
     fee: 500,
     onlineAvailable: true,
@@ -132,12 +132,51 @@ export const mockMinwons: Minwon[] = [
     name: '여권 재발급',
     category: '여권',
     institution: '외교부 / 정부24',
-    description: '여권 유효기간 만료, 분실, 훼손 등으로 인한 여권 재발급 신청입니다.',
+    description:
+      '여권 유효기간 만료, 분실, 훼손 등으로 인한 여권 재발급 신청입니다.',
     keywords: ['여권 재발급', '여권', '여권 발급', '여권 신청'],
     processingTime: '7~10일',
     fee: 55000,
     onlineAvailable: true,
     url: 'https://www.gov.kr/portal/service/serviceInfo/126200000030',
+  },
+  {
+    id: 'minwon-012',
+    name: '건강보험 자격득실확인서',
+    category: '기타',
+    institution: '국민건강보험공단 / 정부24',
+    description:
+      '가입자 또는 가입자였던 person의 건강보험 자격 득실 내역을 확인하는 서류입니다.',
+    keywords: ['건강득실확인서', '건강보험', '자격득실', '이직'],
+    processingTime: '즉시 발급',
+    fee: 0,
+    onlineAvailable: true,
+    url: 'https://www.gov.kr/portal/service/serviceInfo/PTR000050333',
+  },
+  {
+    id: 'minwon-013',
+    name: '근로소득 원천징수영수증',
+    category: '세무',
+    institution: '국세청 / 홈택스',
+    description:
+      '근로소득에 대해 원천징수한 세액과 소득 내역을 증명하는 서류입니다.',
+    keywords: ['원천징수영수증', '원천징수', '소득증빙', '이직'],
+    processingTime: '즉시 발급',
+    fee: 0,
+    onlineAvailable: true,
+    url: 'https://hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml',
+  },
+  {
+    id: 'minwon-014',
+    name: '국민연금 가입증명서',
+    category: '기타',
+    institution: '국민연금공단',
+    description: '국민연금 가입 이력을 증명하는 서류입니다.',
+    keywords: ['국민연금 가입증명서', '국민연금', '가입증명', '이직'],
+    processingTime: '즉시 발급',
+    fee: 0,
+    onlineAvailable: true,
+    url: 'https://www.nps.or.kr/elctcvlcpt/comm/getOHAC0000M3.do?menuId=MN24000937',
   },
 ];
 
@@ -210,4 +249,3 @@ export function getMinwonsByPackageId(packageId: string): Minwon[] {
     .map((id) => getMinwonById(id))
     .filter((minwon): minwon is Minwon => minwon !== undefined);
 }
-

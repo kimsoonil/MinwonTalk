@@ -11,10 +11,7 @@ export function generateChatResponse(userMessage: string): {
   const lowerMessage = userMessage.toLowerCase();
 
   // 키워드 기반 매칭
-  if (
-    lowerMessage.includes('등본') ||
-    lowerMessage.includes('주민등록')
-  ) {
+  if (lowerMessage.includes('등본') || lowerMessage.includes('주민등록')) {
     if (lowerMessage.includes('초본')) {
       return {
         message:
@@ -81,6 +78,14 @@ export function generateChatResponse(userMessage: string): {
     };
   }
 
+  if (lowerMessage.includes('이직')) {
+    return {
+      message:
+        '이직을 준비 중이시군요! 건강보험 자격득실확인서, 원천징수영수증, 국민연금 가입증명서, 주민등록등본이 필요할 수 있습니다.',
+      relatedMinwons: ['minwon-012', 'minwon-013', 'minwon-014', 'minwon-001'],
+    };
+  }
+
   // 검색 시도
   const searchResults = searchMinwons(userMessage);
   if (searchResults.length > 0) {
@@ -116,8 +121,7 @@ export function createChatMessage(
     relatedMinwons: relatedMinwonIds
       ?.map((id) => getMinwonById(id))
       .filter(
-        (minwon): minwon is NonNullable<typeof minwon> =>
-          minwon !== undefined
+        (minwon): minwon is NonNullable<typeof minwon> => minwon !== undefined
       ),
   };
 }
