@@ -1,9 +1,6 @@
 import Link from 'next/link';
 import { Button } from '@/shared/ui/button';
-import {
-  Card,
-  CardContent,
-} from '@/shared/ui/card';
+import { Card, CardContent } from '@/shared/ui/card';
 import { MessageCircle, CheckCircle, FileText, ArrowRight } from 'lucide-react';
 
 /**
@@ -23,6 +20,10 @@ export function HeroSection() {
             <p className="text-lg md:text-xl text-muted-foreground">
               &quot;전입신고 어디서 해요?&quot; AI가 3초 만에 답변하고 보안
               프로그램 설치 없이 서류 발급까지 도와드립니다.
+            </p>
+            <p className="text-sm md:text-base text-primary/80 font-medium">
+              정부24, 국민연금공단, 홈택스등 여러 정부 서류 사이트를 한 곳에서
+              관리하세요
             </p>
           </div>
 
@@ -81,9 +82,7 @@ export function HeroSection() {
 
                 <div className="flex justify-end">
                   <div className="bg-primary text-primary-foreground rounded-lg p-4 max-w-[80%]">
-                    <p className="text-sm">
-                      주민등록등본 떼려면 어떻게 해?
-                    </p>
+                    <p className="text-sm">주민등록등본 떼려면 어떻게 해?</p>
                   </div>
                 </div>
 
@@ -128,4 +127,3 @@ export function HeroSection() {
     </section>
   );
 }
-
